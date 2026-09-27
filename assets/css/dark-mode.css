@@ -1,0 +1,51 @@
+/* ==========================================================================
+   dark-mode.css — Dark theme. Not an inversion: near-black surfaces, softened borders,
+   re-tuned brand colours for AA contrast. Activated by <html data-theme="dark"> (set by the
+   inline head script from localStorage or prefers-color-scheme). The media query below is the
+   no-JavaScript fallback.
+   ========================================================================== */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --primary: #2b76c0; --primary-hover: #3a86d1; --on-primary: #ffffff; --primary-text: #8cc3f5; --primary-soft: #12263c;
+  --secondary: #1a9aa5; --secondary-text: #5cc4c9; --secondary-soft: #0f2c31;
+  --accent: #f0a12b; --accent-hover: #f7b24d; --on-accent: #1f1500; --accent-soft: #2b2110;
+  --bg: #090c11; --surface: #0e131a; --surface-2: #151c26; --card: #121820;
+  --text: #e8edf4; --muted: #a2aebe; --border: #222b37; --border-strong: #35424f;
+  --link: #8cc3f5; --focus: #8cc3f5;
+  --success: #4cc38a; --success-soft: #0f2a1e; --warning: #f0b45a; --warning-soft: #2b2110; --error: #ff8a8f; --error-soft: #2d1416;
+  --hero-from: #0d2a4a; --hero-to: #060d16; --footer-bg: #05080c;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .5); --shadow: 0 10px 28px rgba(0, 0, 0, .5); --shadow-lg: 0 28px 64px rgba(0, 0, 0, .65);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+  color-scheme: dark;
+  --primary: #2b76c0; --primary-hover: #3a86d1; --on-primary: #ffffff; --primary-text: #8cc3f5; --primary-soft: #12263c;
+  --secondary: #1a9aa5; --secondary-text: #5cc4c9; --secondary-soft: #0f2c31;
+  --accent: #f0a12b; --accent-hover: #f7b24d; --on-accent: #1f1500; --accent-soft: #2b2110;
+  --bg: #090c11; --surface: #0e131a; --surface-2: #151c26; --card: #121820;
+  --text: #e8edf4; --muted: #a2aebe; --border: #222b37; --border-strong: #35424f;
+  --link: #8cc3f5; --focus: #8cc3f5;
+  --success: #4cc38a; --success-soft: #0f2a1e; --warning: #f0b45a; --warning-soft: #2b2110; --error: #ff8a8f; --error-soft: #2d1416;
+  --hero-from: #0d2a4a; --hero-to: #060d16; --footer-bg: #05080c;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .5); --shadow: 0 10px 28px rgba(0, 0, 0, .5); --shadow-lg: 0 28px 64px rgba(0, 0, 0, .65);
+  }
+}
+
+/* Component refinements */
+:root[data-theme="dark"] .theme-toggle .i-moon { display: none; }
+:root[data-theme="dark"] .theme-toggle .i-sun { display: inline; }
+:root[data-theme="dark"] .utility-bar { background: #04070b; }
+:root[data-theme="dark"] .site-header { background: color-mix(in srgb, var(--bg) 90%, transparent); }
+:root[data-theme="dark"] .site-header.is-scrolled { box-shadow: 0 8px 28px rgba(0, 0, 0, .6); }
+:root[data-theme="dark"] .media-light { filter: brightness(.86) saturate(.95); }
+:root[data-theme="dark"] .card { background: linear-gradient(180deg, color-mix(in srgb, #fff 3%, var(--card)), var(--card)); }
+:root[data-theme="dark"] .card--hover:hover { border-color: #4a5a6b; }
+:root[data-theme="dark"] .btn--primary { box-shadow: none; }
+:root[data-theme="dark"] .btn--outline:hover { background: var(--surface-2); }
+:root[data-theme="dark"] .toast { background: #e8edf4; color: #0b1017; }
+:root[data-theme="dark"] .modal::backdrop { background: rgba(0, 0, 0, .75); }
+:root[data-theme="dark"] .table thead th { background: var(--surface-2); }
+:root[data-theme="dark"] .input, :root[data-theme="dark"] .select, :root[data-theme="dark"] .textarea { background: #0c1118; }
+:root[data-theme="dark"] .newsletter .input { background: rgba(255, 255, 255, .06); }
+:root[data-theme="dark"] .file-drop { background: var(--surface); }
+:root[data-theme="dark"] ::selection { background: var(--accent); color: var(--on-accent); }

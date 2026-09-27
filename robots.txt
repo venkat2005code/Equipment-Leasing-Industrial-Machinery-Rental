@@ -1,0 +1,7 @@
+# Replace the domain below with your production URL.
+User-agent: *
+Allow: /
+Disallow: /pages/admin-dashboard.html
+Disallow: /pages/404.html
+
+Sitemap: https://www.alturis-bpo.example/sitemap.xml

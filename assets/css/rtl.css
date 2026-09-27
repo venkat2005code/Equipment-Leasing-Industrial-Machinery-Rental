@@ -1,0 +1,31 @@
+/* ==========================================================================
+   rtl.css — Right-to-left refinements (Arabic, Hebrew, Persian, Urdu).
+   style.css is written with CSS logical properties (margin-inline, inset-inline, text-align: start ...),
+   so most of the layout mirrors automatically when <html dir="rtl">. This file only handles what logical
+   properties cannot: directional icons, transforms, gradients, drawers and typography.
+   ========================================================================== */
+[dir="rtl"] body { font-family: "IBM Plex Sans Arabic", "Noto Sans Arabic", "Noto Sans Hebrew", var(--font-body); line-height: 1.8; }
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3 { font-family: "Noto Naskh Arabic", "Noto Serif Hebrew", var(--font-display); letter-spacing: 0; }
+[dir="rtl"] .eyebrow, [dir="rtl"] .footer__title, [dir="rtl"] .brand__tag { letter-spacing: 0; }
+
+/* Directional icons and arrows */
+[dir="rtl"] .icon-dir { transform: scaleX(-1); }
+[dir="rtl"] .link-arrow:hover .icon-dir { transform: scaleX(-1) translateX(4px); }
+[dir="rtl"] .brand, [dir="rtl"] .brand svg { direction: ltr; }
+[dir="rtl"] .brand { direction: rtl; }
+
+/* Drawer slides in from the left edge */
+[dir="rtl"] .drawer__panel { transform: translateX(-100%); }
+[dir="rtl"] .drawer.is-open .drawer__panel { transform: none; }
+
+/* Numbers, phone numbers, emails and code stay left-to-right inside RTL text */
+[dir="rtl"] .ltr, [dir="rtl"] a[href^="tel:"], [dir="rtl"] a[href^="mailto:"], [dir="rtl"] input[type="email"], [dir="rtl"] input[type="tel"], [dir="rtl"] input[type="url"] { direction: ltr; unicode-bidi: plaintext; }
+[dir="rtl"] input[type="email"], [dir="rtl"] input[type="tel"], [dir="rtl"] input[type="url"] { text-align: end; }
+
+/* Toasts and floating UI */
+[dir="rtl"] .toast { animation-name: toast-in-rtl; }
+@keyframes toast-in-rtl { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+
+/* Gradients and backgrounds that carry a direction */
+[dir="rtl"] .hero__grid-bg, [dir="rtl"] .page-hero::before { transform: scaleX(-1); }
+[dir="rtl"] .quote::before { transform: scaleX(-1); }

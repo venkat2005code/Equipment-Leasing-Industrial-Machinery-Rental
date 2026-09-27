@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Client Login (Demo) | Alturis</title>
+<meta name="description" content="Demonstration client login page for the Alturis BPO website template with accessible validation, password visibility toggle and a forgot-password dialog.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://www.alturis-bpo.example/pages/login.html">
+<meta name="theme-color" content="#12406b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Alturis Global Services">
+<meta property="og:title" content="Client Login (Demo) | Alturis">
+<meta property="og:description" content="Demonstration client login page for the Alturis BPO website template with accessible validation, password visibility toggle and a forgot-password dialog.">
+<meta property="og:url" content="https://www.alturis-bpo.example/pages/login.html">
+<meta property="og:image" content="https://www.alturis-bpo.example/assets/images/og-cover.png">
+<meta property="og:image:alt" content="Alturis Global Services — business process outsourcing">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Client Login (Demo) | Alturis">
+<meta name="twitter:description" content="Demonstration client login page for the Alturis BPO website template with accessible validation, password visibility toggle and a forgot-password dialog.">
+<meta name="twitter:image" content="https://www.alturis-bpo.example/assets/images/og-cover.png">
+<link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+<script>(function(){var d=document.documentElement;d.classList.add('js');try{var q=new URLSearchParams(location.search),t=q.get('theme')||localStorage.getItem('bpo-theme'),r=q.get('dir')||localStorage.getItem('bpo-dir');if(t!=='dark'&&t!=='light'){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}d.setAttribute('data-theme',t);if(r==='rtl'){d.setAttribute('dir','rtl')}}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:wght@500;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:wght@500;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/dark-mode.css">
+<link rel="stylesheet" href="../assets/css/rtl.css">
+
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.alturis-bpo.example/pages/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Client login"
+    }
+  ]
+}</script>
+</head>
+<body data-nav="">
+<a class="skip-link" href="#main">Skip to main content</a>
+<div data-component="header"></div>
+<main id="main">
+
+<section class="auth" aria-labelledby="page-title">
+<div class="auth__panel on-dark"><div class="auth__panel-inner">
+<a class="brand" href="index.html" aria-label="Alturis Global Services — home"><img src="../assets/images/logo-mark.svg" alt="" width="40" height="40"><span class="brand__text"><span class="brand__name">Alturis</span><span class="brand__tag">Global Services</span></span></a>
+<h2>Your programme, one dashboard</h2>
+<ul class="hero__points"><li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check-circle"/></svg>Daily SLA and quality reporting</li><li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check-circle"/></svg>Secure document and file exchange</li><li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check-circle"/></svg>Direct line to your delivery manager</li></ul>
+<p class="form-note">This page is a front-end demonstration. No accounts exist and no data is stored or sent.</p>
+<p><a class="link-arrow" href="admin-dashboard.html">View the demo admin dashboard<svg class="icon icon-dir" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a></p>
+</div></div>
+<div class="auth__form"><div class="auth__card">
+<nav class="breadcrumb breadcrumb--plain" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li><span aria-current="page">Client login</span></li></ol></nav>
+<h1 id="page-title" class="auth__title">Sign in to the client portal</h1>
+<p class="muted">Demonstration form: any valid email and an 8+ character password will show the success state.</p>
+<form class="form" data-form="login" data-summary data-loading-label="Signing in…" data-success-text="Demo sign-in successful — no authentication backend is connected." novalidate>
+<div class="field"><label class="field__label" for="lg-email">Email<span class="req" aria-hidden="true">*</span></label>
+<input class="input" id="lg-email" name="email" type="email" autocomplete="username" required>
+<p class="field__error" id="lg-email-error" role="alert"><svg class="icon icon--sm" aria-hidden="true" focusable="false"><use href="#i-alert-circle"/></svg><span></span></p></div>
+<div class="field"><label class="field__label" for="lg-pass">Password<span class="req" aria-hidden="true">*</span></label>
+<div class="input-group"><input class="input" id="lg-pass" name="password" type="password" autocomplete="current-password" required minlength="8" ><button type="button" class="input-group__btn" data-toggle-password aria-controls="lg-pass" aria-pressed="false" aria-label="Show password"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-eye"/></svg></button></div><p class="field__error" id="lg-pass-error" role="alert"><svg class="icon icon--sm" aria-hidden="true" focusable="false"><use href="#i-alert-circle"/></svg><span></span></p></div>
+<div class="auth__row"><div class="field field--check"><label class="check" for="lg-remember"><input type="checkbox" id="lg-remember" name="remember"><span>Remember me</span></label></div>
+<button type="button" class="link-btn" data-modal-open="forgot-modal">Forgot password?</button></div>
+<div class="honeypot" aria-hidden="true"><label>Leave this field empty<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div><div class="alert alert--success" data-form-success hidden role="status"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check-circle"/></svg><div><strong>Signed in (demo)</strong>This is a front-end demonstration only.</div></div>
+<div class="alert alert--error" data-form-error hidden role="alert"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-alert-circle"/></svg><div><strong>There was a problem</strong><span data-error-text></span></div></div>
+<button class="btn btn--primary btn--lg btn--block" type="submit">Sign in</button>
+</form>
+<p class="auth__alt">New to Alturis? <a href="register.html">Create a client account</a></p>
+</div></div>
+</section>
+<dialog class="modal" id="forgot-modal" aria-labelledby="forgot-modal-title">
+<div class="modal__head"><h2 id="forgot-modal-title">Reset your password</h2><button type="button" class="icon-btn" data-modal-close aria-label="Close dialog"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-x"/></svg></button></div>
+<div class="modal__body"><p class="muted">Enter your work email and we will send a reset link. Demo form — no email is sent.</p>
+<form class="form" data-form="reset" data-loading-label="Sending…" data-success-text="If an account exists for that address, a reset link has been sent (demo mode)." novalidate>
+<div class="field"><label class="field__label" for="rs-email">Work email<span class="req" aria-hidden="true">*</span></label>
+<input class="input" id="rs-email" name="email" type="email" autocomplete="email" required>
+<p class="field__error" id="rs-email-error" role="alert"><svg class="icon icon--sm" aria-hidden="true" focusable="false"><use href="#i-alert-circle"/></svg><span></span></p></div>
+<div class="honeypot" aria-hidden="true"><label>Leave this field empty<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div><div class="alert alert--success" data-form-success hidden role="status"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check-circle"/></svg><div><strong>Check your inbox</strong>If an account exists, a reset link is on its way.</div></div>
+<div class="alert alert--error" data-form-error hidden role="alert"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-alert-circle"/></svg><div><strong>There was a problem</strong><span data-error-text></span></div></div>
+<div class="cluster"><button class="btn btn--primary" type="submit">Send reset link</button><button type="button" class="btn btn--outline" data-modal-close>Cancel</button></div></form></div>
+
+</dialog>
+
+</main>
+<div data-component="footer"></div>
+<script src="../assets/js/components.js"></script>
+<script src="../assets/js/main.js" defer></script>
+<script src="../assets/js/forms.js" defer></script>
+</body>
+</html>
