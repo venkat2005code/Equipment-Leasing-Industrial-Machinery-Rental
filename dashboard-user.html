@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="IronLease User Dashboard — Browse machinery, manage bookings, track rentals and download invoices.">
+  <title>User Dashboard – IronLease</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body class="dash-body">
+
+<!-- DASHBOARD SIDEBAR -->
+<aside class="dash-sidebar" id="dash-sidebar">
+  <div class="ds-header">
+    <a href="index.html" class="logo ds-logo">
+      <div class="logo-mark">
+        <svg width="32" height="32" viewBox="0 0 38 38" fill="none"><rect width="38" height="38" rx="6" fill="url(#lgdu)"/><path d="M7 28V16l8-7 8 7v12H7z" fill="none" stroke="#fff" stroke-width="2"/><path d="M23 28V20h8v8H23z" fill="none" stroke="#fff" stroke-width="2"/><path d="M15 28v-6h4v6" fill="none" stroke="#fff" stroke-width="2"/><circle cx="30" cy="11" r="4" fill="#F59E0B"/><defs><linearGradient id="lgdu" x1="0" y1="0" x2="38" y2="38"><stop offset="0%" stop-color="#1E3A5F"/><stop offset="100%" stop-color="#0F2137"/></linearGradient></defs></svg>
+      </div>
+      <span class="logo-primary">Iron<span class="logo-accent">Lease</span></span>
+    </a>
+    <div class="ds-user-type">Client Portal</div>
+  </div>
+
+  <nav class="ds-nav">
+    <div class="ds-nav-group">
+      <span class="ds-nav-label">Overview</span>
+      <a href="#" class="ds-nav-item active" data-section="overview">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/><rect x="14" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/><rect x="3" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/><rect x="14" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/></svg>
+        Dashboard
+      </a>
+    </div>
+    <div class="ds-nav-group">
+      <span class="ds-nav-label">Equipment</span>
+      <a href="#" class="ds-nav-item" data-section="browse">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        Browse Machinery
+      </a>
+      <a href="#" class="ds-nav-item" data-section="book">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/><line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/></svg>
+        Book Equipment
+      </a>
+    </div>
+    <div class="ds-nav-group">
+      <span class="ds-nav-label">My Rentals</span>
+      <a href="#" class="ds-nav-item" data-section="active">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><polyline points="22 4 12 14.01 9 11.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        Active Rentals
+        <span class="ds-badge">3</span>
+      </a>
+      <a href="#" class="ds-nav-item" data-section="schedule">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        Return Schedule
+      </a>
+      <a href="#" class="ds-nav-item" data-section="maintenance">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        Maintenance Status
+      </a>
+      <a href="#" class="ds-nav-item" id="invoices" data-section="invoices">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2"/><polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2"/><line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="2"/><line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="2"/></svg>
+        Download Invoices
+      </a>
+    </div>
+    <div class="ds-nav-group">
+      <span class="ds-nav-label">Account</span>
+      <a href="#" class="ds-nav-item" data-section="profile">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/></svg>
+        Profile Settings
+      </a>
+      <a href="index.html" class="ds-nav-item ds-nav-logout">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Sign Out
+      </a>
+    </div>
+  </nav>
+</aside>
+
+<!-- DASHBOARD MAIN -->
+<div class="dash-main">
+
+  <!-- TOP BAR -->
+  <header class="dash-topbar">
+    <div class="dt-left">
+      <button class="dt-menu-btn" id="dt-menu-btn" aria-label="Toggle sidebar">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <div class="dt-breadcrumb">
+        <span>IronLease</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span class="dt-breadcrumb-active" id="section-title">Dashboard</span>
+      </div>
+    </div>
+    <div class="dt-right">
+      <!-- RTL Toggle -->
+      <button class="dir-toggle" id="dir-toggle" title="Toggle RTL/LTR">
+        <span class="dir-label" id="dir-label">LTR</span>
+      </button>
+      <!-- Theme Toggle -->
+      <button class="theme-toggle" id="theme-toggle">
+        <span class="theme-icon theme-icon-dark"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2"/></svg></span>
+        <span class="theme-icon theme-icon-light"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></span>
+      </button>
+      <button class="dt-notify" aria-label="Notifications">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 0 1-3.46 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span class="dt-notify-dot"></span>
+      </button>
+      <div class="dt-user">
+        <div class="dt-user-avatar" style="padding:0; overflow:hidden;"><img src="images/team-member-1.png" alt="JM" style="width: 100%; height: 100%; object-fit: cover;"></div>
+        <div class="dt-user-info">
+          <strong>James Mitchell</strong>
+          <span>BuildCore Group</span>
+        </div>
+      </div>
+      <a href="index.html" class="btn btn-ghost btn-sm">← Main Site</a>
+    </div>
+  </header>
+
+  <!-- DASHBOARD CONTENT -->
+  <div class="dash-content">
+
+    <!-- ── OVERVIEW SECTION ── -->
+    <div class="dash-section active" id="sec-overview">
+      <div class="ds-welcome">
+        <div>
+          <h1 class="ds-page-title">Good morning, James</h1>
+          <p class="ds-page-sub">Here's a snapshot of your active rentals and upcoming returns.</p>
+        </div>
+        <a href="catalog.html" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          New Booking
+        </a>
+      </div>
+
+      <!-- KPI CARDS -->
+      <div class="ds-kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-icon kpi-amber">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><polyline points="22 4 12 14.01 9 11.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <div class="kpi-data">
+            <span class="kpi-value">3</span>
+            <span class="kpi-label">Active Rentals</span>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon kpi-blue">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <div class="kpi-data">
+            <span class="kpi-value">2</span>
+            <span class="kpi-label">Returns This Week</span>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon kpi-green">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <div class="kpi-data">
+            <span class="kpi-value">All OK</span>
+            <span class="kpi-label">Maintenance Status</span>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon kpi-amber">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2"/><polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <div class="kpi-data">
+            <span class="kpi-value">$14,200</span>
+            <span class="kpi-label">Outstanding Balance</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ACTIVE RENTALS TABLE -->
+      <div class="ds-card">
+        <div class="ds-card-header">
+          <h3>Active Rentals</h3>
+          <a href="#" class="ds-card-link" onclick="navTo('active')">View All →</a>
+        </div>
+        <div class="ds-table-wrap">
+          <table class="ds-table">
+            <thead><tr><th>Equipment</th><th>Booking ID</th><th>Site Location</th><th>Start Date</th><th>Return Date</th><th>Status</th><th>Action</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><div class="dt-equip"><strong>CAT 320 Excavator</strong><span>20T Hydraulic</span></div></td>
+                <td class="dt-mono">#IL-2026-4821</td>
+                <td>Downtown Site, Houston TX</td>
+                <td>Sep 12, 2026</td>
+                <td>Oct 15, 2026</td>
+                <td><span class="ds-status ds-status-active">Active</span></td>
+                <td><button class="btn btn-sm btn-ghost" onclick="alert('Maintenance request submitted')">Request Service</button></td>
+              </tr>
+              <tr>
+                <td><div class="dt-equip"><strong>Cummins 100kVA Generator</strong><span>Silent Type</span></div></td>
+                <td class="dt-mono">#IL-2026-4795</td>
+                <td>Memorial Park Expansion</td>
+                <td>Sep 5, 2026</td>
+                <td>Sep 28, 2026</td>
+                <td><span class="ds-status ds-status-warning">Returning Soon</span></td>
+                <td><button class="btn btn-sm btn-ghost" onclick="alert('Extension request sent')">Extend</button></td>
+              </tr>
+              <tr>
+                <td><div class="dt-equip"><strong>Genie S-85 Boom Lift</strong><span>85ft Boom</span></div></td>
+                <td class="dt-mono">#IL-2026-4811</td>
+                <td>West Loop Tower, Level 12</td>
+                <td>Sep 18, 2026</td>
+                <td>Oct 5, 2026</td>
+                <td><span class="ds-status ds-status-active">Active</span></td>
+                <td><button class="btn btn-sm btn-ghost" onclick="alert('Details expanded')">Details</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- MAINTENANCE SUMMARY -->
+      <div class="ds-two-col">
+        <div class="ds-card">
+          <div class="ds-card-header"><h3>Maintenance Overview</h3></div>
+          <div class="maint-list">
+            <div class="maint-item">
+              <div class="maint-icon mi-green"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-check"/></svg></div>
+              <div class="maint-info"><strong>CAT 320 Excavator</strong><span>Next service: Oct 12 — 27 days away</span></div>
+              <span class="ds-status ds-status-active">Good</span>
+            </div>
+            <div class="maint-item">
+              <div class="maint-icon mi-green"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-check"/></svg></div>
+              <div class="maint-info"><strong>Cummins 100kVA Generator</strong><span>Last serviced: Sep 5 — All checks passed</span></div>
+              <span class="ds-status ds-status-active">Good</span>
+            </div>
+            <div class="maint-item">
+              <div class="maint-icon mi-amber"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-alert"/></svg></div>
+              <div class="maint-info"><strong>Genie S-85 Boom Lift</strong><span>Hydraulic fluid check due in 3 days</span></div>
+              <span class="ds-status ds-status-warning">Attention</span>
+            </div>
+          </div>
+        </div>
+        <div class="ds-card" id="invoices-section">
+          <div class="ds-card-header"><h3>Recent Invoices</h3><a href="#" class="ds-card-link" onclick="navTo('invoices')">All Invoices →</a></div>
+          <div class="inv-list">
+            <div class="inv-item">
+              <div class="inv-info"><strong>INV-2026-0089</strong><span>Sep 12 — CAT 320 Excavator rental</span></div>
+              <div class="inv-right"><span class="inv-amount">$14,400</span><button class="btn btn-sm btn-ghost" onclick="alert('Downloading INV-2026-0089.pdf')">↓ PDF</button></div>
+            </div>
+            <div class="inv-item">
+              <div class="inv-info"><strong>INV-2026-0081</strong><span>Sep 5 — Cummins Generator rental</span></div>
+              <div class="inv-right"><span class="inv-amount">$2,760</span><button class="btn btn-sm btn-ghost" onclick="alert('Downloading INV-2026-0081.pdf')">↓ PDF</button></div>
+            </div>
+            <div class="inv-item">
+              <div class="inv-info"><strong>INV-2026-0076</strong><span>Aug 28 — Boom Lift rental</span></div>
+              <div class="inv-right"><span class="inv-amount">$6,460</span><button class="btn btn-sm btn-ghost" onclick="alert('Downloading INV-2026-0076.pdf')">↓ PDF</button></div>
+            </div>
+            <div class="inv-item">
+              <div class="inv-info"><strong>INV-2026-0063</strong><span>Aug 10 — Compactor rental (returned)</span></div>
+              <div class="inv-right"><span class="inv-amount">$2,100</span><button class="btn btn-sm btn-ghost" onclick="alert('Downloading INV-2026-0063.pdf')">↓ PDF</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /overview -->
+
+    <!-- ── BROWSE SECTION ── -->
+    <div class="dash-section" id="sec-browse">
+      <h1 class="ds-page-title">Browse Available Machinery</h1>
+      <p class="ds-page-sub">Filter our 850+ machine fleet and book directly from your dashboard.</p>
+      <div class="ds-browse-filters">
+        <button class="filter-btn active">All Categories</button>
+        <button class="filter-btn">Excavators</button>
+        <button class="filter-btn">Cranes</button>
+        <button class="filter-btn">Generators</button>
+        <button class="filter-btn">Aerial Lifts</button>
+        <button class="filter-btn">Compaction</button>
+      </div>
+      <div class="ds-browse-grid">
+        <div class="ds-browse-card">
+          <div class="dbc-img"><svg width="60" height="48" viewBox="0 0 64 64" fill="none"><rect x="4" y="36" width="40" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><rect x="8" y="28" width="32" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="52" r="6" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="36" cy="52" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M40 34V18l12-4v20" fill="none" stroke="currentColor" stroke-width="2"/></svg><span class="cc-availability cc-avail-yes" style="position:static;display:inline-flex;">Available</span></div>
+          <div class="dbc-body">
+            <div class="cc-cat">Excavator</div>
+            <h4>CAT 320 Hydraulic Excavator</h4>
+            <div class="cc-specs"><span>20T</span><span>165HP</span><span>1.0m³</span></div>
+            <div class="cc-footer" style="border-top:1px solid var(--border-color);padding-top:12px;margin-top:12px;"><div class="cc-price"><strong>$480</strong><span>/day</span></div><button class="btn btn-sm btn-primary" onclick="navTo('book')">Book Now</button></div>
+          </div>
+        </div>
+        <div class="ds-browse-card">
+          <div class="dbc-img"><svg width="60" height="48" viewBox="0 0 56 56" fill="none"><line x1="28" y1="4" x2="28" y2="48" stroke="currentColor" stroke-width="2.5"/><line x1="28" y1="8" x2="52" y2="22" stroke="currentColor" stroke-width="2"/><line x1="52" y1="22" x2="52" y2="34" stroke="currentColor" stroke-width="2"/><rect x="37" y="34" width="10" height="12" rx="1" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span class="cc-availability cc-avail-limited" style="position:static;display:inline-flex;">Limited</span></div>
+          <div class="dbc-body">
+            <div class="cc-cat">Mobile Crane</div>
+            <h4>Liebherr LTM 1090-4.2</h4>
+            <div class="cc-specs"><span>90T lift</span><span>56m boom</span></div>
+            <div class="cc-footer" style="border-top:1px solid var(--border-color);padding-top:12px;margin-top:12px;"><div class="cc-price"><strong>$1,200</strong><span>/day</span></div><button class="btn btn-sm btn-primary" onclick="navTo('book')">Book Now</button></div>
+          </div>
+        </div>
+        <div class="ds-browse-card">
+          <div class="dbc-img"><svg width="60" height="48" viewBox="0 0 56 56" fill="none"><rect x="6" y="16" width="44" height="24" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M22 26l-6 8h14l-6 8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="38" cy="28" r="5" fill="none" stroke="currentColor" stroke-width="2"/></svg><span class="cc-availability cc-avail-yes" style="position:static;display:inline-flex;">Available</span></div>
+          <div class="dbc-body">
+            <div class="cc-cat">Generator</div>
+            <h4>Caterpillar 500kVA Generator</h4>
+            <div class="cc-specs"><span>500kVA</span><span>Tier 4</span><span>Silent</span></div>
+            <div class="cc-footer" style="border-top:1px solid var(--border-color);padding-top:12px;margin-top:12px;"><div class="cc-price"><strong>$320</strong><span>/day</span></div><button class="btn btn-sm btn-primary" onclick="navTo('book')">Book Now</button></div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:var(--space-xl)"><a href="catalog.html" class="btn btn-outline btn-lg">View Full Catalog →</a></div>
+    </div><!-- /browse -->
+
+    <!-- ── BOOK EQUIPMENT ── -->
+    <div class="dash-section" id="sec-book">
+      <h1 class="ds-page-title">Book Equipment</h1>
+      <p class="ds-page-sub">Select equipment, set your project dates, and submit your booking for confirmation.</p>
+      <div class="ds-book-form-wrap">
+        <div class="ds-card">
+          <h3 style="margin-bottom:var(--space-xl)">New Equipment Booking</h3>
+          <form onsubmit="event.preventDefault();alert('Booking submitted! You\'ll receive confirmation within 2 hours.')">
+            <div class="ds-form-grid">
+              <div class="form-group"><label>Equipment Category</label><select class="form-control"><option>Excavators</option><option>Mobile Cranes</option><option>Tower Cranes</option><option>Generators</option><option>Aerial Lifts</option><option>Compaction</option></select></div>
+              <div class="form-group"><label>Specific Model</label><select class="form-control"><option>CAT 320 (20T Excavator)</option><option>Komatsu PC240 (24T Excavator)</option><option>Bobcat E55 (Mini Excavator)</option></select></div>
+              <div class="form-group"><label>Project Start Date</label><input type="date" class="form-control"></div>
+              <div class="form-group"><label>Expected Return Date</label><input type="date" class="form-control"></div>
+              <div class="form-group"><label>Delivery Site Address</label><input type="text" class="form-control" placeholder="Full site address or GPS coordinates"></div>
+              <div class="form-group"><label>Site Contact Person</label><input type="text" class="form-control" placeholder="On-site contact name & phone"></div>
+              <div class="form-group" style="grid-column:1/-1"><label>Special Site Requirements</label><textarea class="form-control" rows="3" placeholder="Access restrictions, height limits, surface conditions, crane radius requirements..."></textarea></div>
+            </div>
+            <div style="margin-top:var(--space-xl);display:flex;gap:12px;">
+              <button type="submit" class="btn btn-primary btn-lg">Submit Booking Request →</button>
+              <button type="button" class="btn btn-ghost btn-lg" onclick="navTo('overview')">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div><!-- /book -->
+
+    <!-- ── ACTIVE RENTALS ── -->
+    <div class="dash-section" id="sec-active">
+      <h1 class="ds-page-title">Active Rentals</h1>
+      <p class="ds-page-sub">All currently active equipment on your sites. Request service or extend directly from here.</p>
+      <div class="ds-card">
+        <div class="ds-table-wrap">
+          <table class="ds-table">
+            <thead><tr><th>Equipment</th><th>Booking ID</th><th>Site</th><th>Start</th><th>Return</th><th>Maint.</th><th>Status</th><th>Actions</th></tr></thead>
+            <tbody>
+              <tr><td><div class="dt-equip"><strong>CAT 320 Excavator</strong><span>Unit #EX-0042</span></div></td><td class="dt-mono">#IL-2026-4821</td><td>Downtown, Houston</td><td>Sep 12</td><td>Oct 15</td><td><span class="ds-status ds-status-active">Good</span></td><td><span class="ds-status ds-status-active">Active</span></td><td><div style="display:flex;gap:6px;"><button class="btn btn-sm btn-ghost" onclick="alert('Service request logged')"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-tool"/></svg> Service</button><button class="btn btn-sm btn-ghost" onclick="alert('Extension requested')"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-calendar"/></svg> Extend</button></div></td></tr>
+              <tr><td><div class="dt-equip"><strong>Cummins 100kVA Gen.</strong><span>Unit #GN-0095</span></div></td><td class="dt-mono">#IL-2026-4795</td><td>Memorial Park</td><td>Sep 5</td><td>Sep 28</td><td><span class="ds-status ds-status-active">Good</span></td><td><span class="ds-status ds-status-warning">Due Soon</span></td><td><div style="display:flex;gap:6px;"><button class="btn btn-sm btn-ghost" onclick="alert('Service request logged')"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-tool"/></svg> Service</button><button class="btn btn-sm btn-ghost" onclick="alert('Extension requested')"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-calendar"/></svg> Extend</button></div></td></tr>
+              <tr><td><div class="dt-equip"><strong>Genie S-85 Boom Lift</strong><span>Unit #AL-0067</span></div></td><td class="dt-mono">#IL-2026-4811</td><td>West Loop Tower</td><td>Sep 18</td><td>Oct 5</td><td><span class="ds-status ds-status-warning">Due Check</span></td><td><span class="ds-status ds-status-active">Active</span></td><td><div style="display:flex;gap:6px;"><button class="btn btn-sm btn-primary" onclick="alert('Maintenance scheduled')"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-tool"/></svg> Schedule Maint.</button></div></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div><!-- /active -->
+
+    <!-- ── RETURN SCHEDULE ── -->
+    <div class="dash-section" id="sec-schedule">
+      <h1 class="ds-page-title">Return Schedule</h1>
+      <p class="ds-page-sub">Upcoming returns and collection schedule.</p>
+      <div class="ds-card">
+        <div class="ds-return-list">
+          <div class="ds-return-item">
+            <div class="ds-return-date ds-return-urgent">
+              <strong>Sep 28</strong><span>3 days</span>
+            </div>
+            <div class="ds-return-info">
+              <strong>Cummins 100kVA Generator</strong>
+              <span>Unit #GN-0095 — Memorial Park Expansion, Houston</span>
+            </div>
+            <div class="ds-return-actions">
+              <button class="btn btn-sm btn-primary" onclick="alert('Extension requested for 2 weeks')">Extend Rental</button>
+              <button class="btn btn-sm btn-ghost" onclick="alert('Return confirmed. Collection team notified.')">Confirm Return</button>
+            </div>
+          </div>
+          <div class="ds-return-item">
+            <div class="ds-return-date">
+              <strong>Oct 5</strong><span>10 days</span>
+            </div>
+            <div class="ds-return-info">
+              <strong>Genie S-85 Boom Lift</strong>
+              <span>Unit #AL-0067 — West Loop Tower, Level 12</span>
+            </div>
+            <div class="ds-return-actions">
+              <button class="btn btn-sm btn-ghost" onclick="alert('Return confirmed. Collection team notified.')">Confirm Return</button>
+            </div>
+          </div>
+          <div class="ds-return-item">
+            <div class="ds-return-date">
+              <strong>Oct 15</strong><span>20 days</span>
+            </div>
+            <div class="ds-return-info">
+              <strong>CAT 320 Hydraulic Excavator</strong>
+              <span>Unit #EX-0042 — Downtown Construction Site, Houston</span>
+            </div>
+            <div class="ds-return-actions">
+              <button class="btn btn-sm btn-ghost" onclick="alert('Extension requested')">Extend Rental</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /schedule -->
+
+    <!-- ── MAINTENANCE ── -->
+    <div class="dash-section" id="sec-maintenance">
+      <h1 class="ds-page-title">Maintenance Status</h1>
+      <p class="ds-page-sub">Real-time maintenance health for all your active equipment.</p>
+      <div class="ds-card">
+        <div class="maint-list">
+          <div class="maint-item maint-item-lg">
+            <div class="maint-icon mi-green"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-check"/></svg></div>
+            <div class="maint-info">
+              <strong>CAT 320 Hydraulic Excavator — Unit #EX-0042</strong>
+              <span>Engine: OK | Hydraulics: OK | Bucket pins: OK | Filter: Changed Sep 12</span>
+              <span style="color:var(--text-muted);font-size:.78rem;">Next scheduled service: Oct 12, 2026</span>
+            </div>
+            <span class="ds-status ds-status-active">Operational</span>
+          </div>
+          <div class="maint-item maint-item-lg">
+            <div class="maint-icon mi-green"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-check"/></svg></div>
+            <div class="maint-info">
+              <strong>Cummins 100kVA Generator — Unit #GN-0095</strong>
+              <span>Engine: OK | Alternator: OK | Coolant: OK | Last service: Sep 5</span>
+              <span style="color:var(--text-muted);font-size:.78rem;">No immediate service required</span>
+            </div>
+            <span class="ds-status ds-status-active">Operational</span>
+          </div>
+          <div class="maint-item maint-item-lg">
+            <div class="maint-icon mi-amber"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-alert"/></svg></div>
+            <div class="maint-info">
+              <strong>Genie S-85 Boom Lift — Unit #AL-0067</strong>
+              <span>Engine: OK | Hydraulics: [!] Fluid check due | Boom: OK | Safety: OK</span>
+              <span style="color:#F59E0B;font-size:.78rem;font-weight:600;">Action required: Hydraulic fluid inspection due Oct 1</span>
+            </div>
+            <button class="btn btn-sm btn-primary" onclick="alert('Maintenance request submitted. Technician scheduled for Sep 29.')">Schedule Check</button>
+          </div>
+        </div>
+      </div>
+    </div><!-- /maintenance -->
+
+    <!-- ── INVOICES ── -->
+    <div class="dash-section" id="sec-invoices">
+      <h1 class="ds-page-title">Download Invoices</h1>
+      <p class="ds-page-sub">All rental invoices and agreements in one place. Download PDF anytime.</p>
+      <div class="ds-card">
+        <div class="inv-list">
+          <div class="inv-item inv-item-lg">
+            <div class="inv-icon"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-file-text"/></svg></div>
+            <div class="inv-info"><strong>INV-2026-0089</strong><span>Sep 12, 2026 — CAT 320 Excavator — 33 day rental — Downtown Houston</span></div>
+            <div class="inv-right"><span class="inv-amount">$14,400</span><span class="ds-status ds-status-warning">Pending</span><button class="btn btn-sm btn-primary" onclick="alert('Downloading INV-2026-0089.pdf')">↓ Download PDF</button></div>
+          </div>
+          <div class="inv-item inv-item-lg">
+            <div class="inv-icon"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-file-text"/></svg></div>
+            <div class="inv-info"><strong>INV-2026-0081</strong><span>Sep 5, 2026 — Cummins 100kVA Generator — 23 day rental — Memorial Park</span></div>
+            <div class="inv-right"><span class="inv-amount">$2,760</span><span class="ds-status ds-status-active">Paid</span><button class="btn btn-sm btn-ghost" onclick="alert('Downloading INV-2026-0081.pdf')">↓ Download PDF</button></div>
+          </div>
+          <div class="inv-item inv-item-lg">
+            <div class="inv-icon"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-file-text"/></svg></div>
+            <div class="inv-info"><strong>INV-2026-0076</strong><span>Aug 28, 2026 — Genie S-85 Boom Lift — 17 day rental — West Loop Tower</span></div>
+            <div class="inv-right"><span class="inv-amount">$6,460</span><span class="ds-status ds-status-active">Paid</span><button class="btn btn-sm btn-ghost" onclick="alert('Downloading INV-2026-0076.pdf')">↓ Download PDF</button></div>
+          </div>
+          <div class="inv-item inv-item-lg">
+            <div class="inv-icon"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-file-text"/></svg></div>
+            <div class="inv-info"><strong>INV-2026-0063</strong><span>Aug 10, 2026 — CAT CB10 Compactor — 22 day rental — Westheimer Project</span></div>
+            <div class="inv-right"><span class="inv-amount">$2,100</span><span class="ds-status ds-status-active">Paid</span><button class="btn btn-sm btn-ghost" onclick="alert('Downloading INV-2026-0063.pdf')">↓ Download PDF</button></div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /invoices -->
+
+    <!-- ── MESSAGES (EMPTY STATE) ── -->
+    <div class="dash-section" id="sec-messages">
+      <h1 class="ds-page-title">Notifications</h1>
+      <div class="ds-card" style="text-align: center; padding: 60px 20px;">
+        <img src="images/illustration-empty-state.png" alt="No Data Found" style="width: 240px; margin: 0 auto 24px; display: block;">
+        <h3>All Caught Up!</h3>
+        <p style="color: var(--text-muted); max-width: 400px; margin: 0 auto;">There are no new notifications, pending actions, or messages requiring your attention at this time.</p>
+      </div>
+    </div>
+
+    <!-- ── PROFILE ── -->
+    <div class="dash-section" id="sec-profile">
+      <h1 class="ds-page-title">Profile Settings</h1>
+      <p class="ds-page-sub">Manage your account information and notification preferences.</p>
+      <div class="ds-card" style="max-width:640px;">
+        <h3 style="margin-bottom:var(--space-xl)">Account Information</h3>
+        <div class="ds-form-grid">
+          <div class="form-group"><label>First Name</label><input type="text" class="form-control" value="James"></div>
+          <div class="form-group"><label>Last Name</label><input type="text" class="form-control" value="Mitchell"></div>
+          <div class="form-group"><label>Company</label><input type="text" class="form-control" value="BuildCore Group"></div>
+          <div class="form-group"><label>Job Title</label><input type="text" class="form-control" value="Site Director"></div>
+          <div class="form-group"><label>Email</label><input type="email" class="form-control" value="james@buildcore.com"></div>
+          <div class="form-group"><label>Phone</label><input type="tel" class="form-control" value="+1 (555) 421-8800"></div>
+        </div>
+        <div style="margin-top:var(--space-xl);display:flex;gap:12px;">
+          <button class="btn btn-primary" onclick="alert('Profile saved successfully!')">Save Changes</button>
+          <button class="btn btn-ghost" onclick="alert('Password reset email sent!')">Change Password</button>
+        </div>
+      </div>
+    </div><!-- /profile -->
+
+  </div><!-- /dash-content -->
+</div><!-- /dash-main -->
+
+<script src="js/global.js"></script>
+<script>
+  // Section navigation
+  function navTo(sectionId) {
+    document.querySelectorAll('.ds-nav-item').forEach(item => item.classList.remove('active'));
+    document.querySelectorAll('.dash-section').forEach(s => s.classList.remove('active'));
+    const navItem = document.querySelector(`[data-section="${sectionId}"]`);
+    if (navItem) navItem.classList.add('active');
+    const sec = document.getElementById(`sec-${sectionId}`);
+    if (sec) sec.classList.add('active');
+    const titles = {
+      overview: 'Dashboard', browse: 'Browse Machinery', book: 'Book Equipment',
+      active: 'Active Rentals', schedule: 'Return Schedule',
+      maintenance: 'Maintenance Status', invoices: 'Invoices', profile: 'Profile Settings'
+    };
+    const titleEl = document.getElementById('section-title');
+    if (titleEl) titleEl.textContent = titles[sectionId] || 'Dashboard';
+    window.scrollTo(0, 0);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Nav item clicks
+    document.querySelectorAll('.ds-nav-item[data-section]').forEach(item => {
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
+        navTo(item.dataset.section);
+      });
+    });
+
+    // Filter buttons
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.closest('.ds-browse-filters').querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+
+    // Mobile sidebar toggle
+    const menuBtn = document.getElementById('dt-menu-btn');
+    const sidebar = document.getElementById('dash-sidebar');
+    menuBtn?.addEventListener('click', () => sidebar.classList.toggle('open'));
+
+    // Form control styles
+    document.querySelectorAll('.form-control').forEach(el => {
+      el.style.padding = '10px 14px';
+      el.style.background = 'var(--bg-elevated)';
+      el.style.border = '1px solid var(--border-color)';
+      el.style.borderRadius = 'var(--radius-sm)';
+      el.style.color = 'var(--text-primary)';
+      el.style.fontFamily = 'var(--font-ui)';
+      el.style.fontSize = '0.875rem';
+      el.style.width = '100%';
+      el.style.outline = 'none';
+      el.style.transition = 'border-color 0.15s';
+    });
+  });
+</script>
+</body>
+</html>

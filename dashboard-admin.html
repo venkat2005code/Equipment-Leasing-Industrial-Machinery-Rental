@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="IronLease Admin Dashboard — Fleet management, client accounts, maintenance scheduling, and operational analytics.">
+  <title>Admin Dashboard – IronLease</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body class="dash-body">
+
+<!-- ADMIN SIDEBAR -->
+<aside class="dash-sidebar" id="dash-sidebar">
+  <div class="ds-header">
+    <a href="index.html" class="logo ds-logo">
+      <div class="logo-mark">
+        <svg width="32" height="32" viewBox="0 0 38 38" fill="none"><rect width="38" height="38" rx="6" fill="url(#lgda)"/><path d="M7 28V16l8-7 8 7v12H7z" fill="none" stroke="#fff" stroke-width="2"/><path d="M23 28V20h8v8H23z" fill="none" stroke="#fff" stroke-width="2"/><path d="M15 28v-6h4v6" fill="none" stroke="#fff" stroke-width="2"/><circle cx="30" cy="11" r="4" fill="#F59E0B"/><defs><linearGradient id="lgda" x1="0" y1="0" x2="38" y2="38"><stop offset="0%" stop-color="#1E3A5F"/><stop offset="100%" stop-color="#0F2137"/></linearGradient></defs></svg>
+      </div>
+      <span class="logo-primary">Iron<span class="logo-accent">Lease</span></span>
+    </a>
+    <div class="ds-user-type" style="background:rgba(239,68,68,0.1);color:#EF4444;">Admin Panel</div>
+  </div>
+
+  <nav class="ds-nav">
+    <div class="ds-nav-group">
+      <span class="ds-nav-label">Command Centre</span>
+      <a href="#" class="ds-nav-item active" data-section="overview">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/><rect x="14" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/><rect x="3" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/><rect x="14" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/></svg>
+        Overview
+      </a>
+    </div>
+    <div class="ds-nav-group">
+      <span class="ds-nav-label">Fleet</span>
+      <a href="#" class="ds-nav-item" data-section="fleet">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="1" y="3" width="15" height="13" rx="1" stroke="currentColor" stroke-width="2"/><path d="M16 8h4l3 4v4h-7V8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="5.5" cy="18.5" r="2.5" stroke="currentColor" stroke-width="2"/><circle cx="18.5" cy="18.5" r="2.5" stroke="currentColor" stroke-width="2"/></svg>
+        Fleet Management
+        <span class="ds-badge" style="background:#22C55E;">850</span>
+      </a>
+      <a href="#" class="ds-nav-item" data-section="maintenance-sched">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" stroke="currentColor" stroke-width="2"/></svg>
+        Maintenance Schedule
+        <span class="ds-badge" style="background:#EF4444;">4</span>
+      </a>
+    </div>
+    <div class="ds-nav-group">
+      <span class="ds-nav-label">Operations</span>
+      <a href="#" class="ds-nav-item" data-section="bookings">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/><line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/></svg>
+        Active Bookings
+        <span class="ds-badge">47</span>
+      </a>
+      <a href="#" class="ds-nav-item" data-section="clients">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        Client Accounts
+      </a>
+      <a href="#" class="ds-nav-item" data-section="deliveries">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="1" y="3" width="15" height="13" rx="1" stroke="currentColor" stroke-width="2"/><path d="M16 8h4l3 4v4h-7V8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="5.5" cy="18.5" r="2.5" stroke="currentColor" stroke-width="2"/><circle cx="18.5" cy="18.5" r="2.5" stroke="currentColor" stroke-width="2"/></svg>
+        Deliveries & Returns
+      </a>
+    </div>
+    <div class="ds-nav-group">
+      <span class="ds-nav-label">Finance</span>
+      <a href="#" class="ds-nav-item" data-section="finance">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><line x1="12" y1="1" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        Revenue & Invoices
+      </a>
+    </div>
+    <div class="ds-nav-group">
+      <a href="index.html" class="ds-nav-item ds-nav-logout">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Sign Out
+      </a>
+    </div>
+  </nav>
+</aside>
+
+<!-- DASHBOARD MAIN -->
+<div class="dash-main">
+  <header class="dash-topbar">
+    <div class="dt-left">
+      <button class="dt-menu-btn" id="dt-menu-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+      <div class="dt-breadcrumb"><span>IronLease</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="dt-breadcrumb-active" id="section-title">Admin Overview</span></div>
+    </div>
+    <div class="dt-right">
+      <button class="dir-toggle" id="dir-toggle"><span class="dir-label" id="dir-label">LTR</span></button>
+      <button class="theme-toggle" id="theme-toggle">
+        <span class="theme-icon theme-icon-dark"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2"/></svg></span>
+        <span class="theme-icon theme-icon-light"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></span>
+      </button>
+      <button class="dt-notify"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 0 1-3.46 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="dt-notify-dot"></span></button>
+      <div class="dt-user">
+        <div class="dt-user-avatar" style="padding: 0; overflow: hidden;"><img src="images/avatar-sarah.png" alt="Sarah Admin" style="width: 100%; height: 100%; object-fit: cover;"></div>
+        <div class="dt-user-info"><strong>Sarah Reeves (Admin)</strong><span>Fleet Manager</span></div>
+      </div>
+      <a href="index.html" class="btn btn-ghost btn-sm">← Main Site</a>
+    </div>
+  </header>
+
+  <div class="dash-content">
+
+    <!-- ── OVERVIEW ── -->
+    <div class="dash-section active" id="sec-overview">
+      <!-- ALERT -->
+      <div class="admin-alert">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><line x1="12" y1="8" x2="12" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="16" x2="12.01" y2="16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <div class="admin-alert-text">
+          <strong>4 machines require immediate maintenance attention</strong>
+          <span>Units EX-0015, GN-0048, AL-0023, and CP-0012 are overdue for scheduled service. Review in Maintenance Schedule.</span>
+        </div>
+        <button class="btn btn-sm btn-primary" onclick="navTo('maintenance-sched')">Review Now →</button>
+      </div>
+
+      <div class="ds-welcome">
+        <div>
+          <h1 class="ds-page-title">Fleet Operations Overview</h1>
+          <p class="ds-page-sub">Live status of all 850+ machines, active bookings, and operational metrics.</p>
+        </div>
+        <div style="display:flex;gap:8px;">
+          <button class="btn btn-ghost btn-sm" onclick="alert('Report generated!')"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-bar-chart"/></svg> Export Report</button>
+          <a href="catalog.html" class="btn btn-primary btn-sm">+ Add Equipment</a>
+        </div>
+      </div>
+
+      <!-- ADMIN KPI 5 -->
+      <div class="ds-kpi-grid-5">
+        <div class="kpi-card"><div class="kpi-icon kpi-green"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><polyline points="22 4 12 14.01 9 11.01" stroke="currentColor" stroke-width="2"/></svg></div><div class="kpi-data"><span class="kpi-value">724</span><span class="kpi-label">Available Fleet</span></div></div>
+        <div class="kpi-card"><div class="kpi-icon kpi-amber"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><div class="kpi-data"><span class="kpi-value">89</span><span class="kpi-label">On Active Rentals</span></div></div>
+        <div class="kpi-card"><div class="kpi-icon kpi-red"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" stroke="currentColor" stroke-width="2"/></svg></div><div class="kpi-data"><span class="kpi-value">37</span><span class="kpi-label">In Maintenance</span></div></div>
+        <div class="kpi-card"><div class="kpi-icon kpi-blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><line x1="12" y1="1" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><div class="kpi-data"><span class="kpi-value">$892K</span><span class="kpi-label">Revenue (Sept)</span></div></div>
+        <div class="kpi-card"><div class="kpi-icon kpi-green"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><div class="kpi-data"><span class="kpi-value">2,418</span><span class="kpi-label">Active Clients</span></div></div>
+      </div>
+
+      <!-- RECENT BOOKINGS + MAINTENANCE ALERTS -->
+      <div class="ds-two-col">
+        <div class="ds-card">
+          <div class="ds-card-header"><h3>Recent Bookings</h3><a href="#" class="ds-card-link" onclick="navTo('bookings')">View All 47 →</a></div>
+          <div class="ds-table-wrap">
+            <table class="ds-table">
+              <thead><tr><th>Client</th><th>Equipment</th><th>Start</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td><div class="dt-equip"><strong>BuildCore Group</strong><span>James Mitchell</span></div></td><td>CAT 320 Excavator</td><td>Sep 12</td><td><span class="ds-status ds-status-active">Active</span></td></tr>
+                <tr><td><div class="dt-equip"><strong>Vistas Construction</strong><span>Sunita Agarwal</span></div></td><td>LTM 1090 Crane</td><td>Sep 14</td><td><span class="ds-status ds-status-active">Active</span></td></tr>
+                <tr><td><div class="dt-equip"><strong>MedBuild Group</strong><span>Mohammed Hasan</span></div></td><td>500kVA Generator</td><td>Sep 20</td><td><span class="ds-status ds-status-info">In Transit</span></td></tr>
+                <tr><td><div class="dt-equip"><strong>NorthStar Energy</strong><span>Lisa Wang</span></div></td><td>2MW Generator Set</td><td>Sep 22</td><td><span class="ds-status ds-status-info">Pending</span></td></tr>
+                <tr><td><div class="dt-equip"><strong>Apex Mining Ltd</strong><span>Raj Sharma</span></div></td><td>Drilling Rig DR-40</td><td>Sep 25</td><td><span class="ds-status ds-status-warning">Confirming</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="ds-card">
+          <div class="ds-card-header"><h3>Maintenance Alerts</h3><a href="#" class="ds-card-link" onclick="navTo('maintenance-sched')">Schedule →</a></div>
+          <div class="maint-list">
+            <div class="maint-item"><div class="maint-icon mi-red"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-x"/></svg></div><div class="maint-info"><strong>Unit EX-0015 — CAT 320</strong><span>Overdue 5 days — Hydraulic fluid change</span></div><span class="ds-status ds-status-error">Overdue</span></div>
+            <div class="maint-item"><div class="maint-icon mi-red"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-x"/></svg></div><div class="maint-info"><strong>Unit GN-0048 — 100kVA Gen</strong><span>Overdue 2 days — Air filter replacement</span></div><span class="ds-status ds-status-error">Overdue</span></div>
+            <div class="maint-item"><div class="maint-icon mi-amber"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-alert"/></svg></div><div class="maint-info"><strong>Unit AL-0023 — Boom Lift</strong><span>Due Today — Safety inspection</span></div><span class="ds-status ds-status-warning">Due Today</span></div>
+            <div class="maint-item"><div class="maint-icon mi-amber"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-alert"/></svg></div><div class="maint-info"><strong>Unit CP-0012 — Compactor</strong><span>Due Tomorrow — Belt check</span></div><span class="ds-status ds-status-warning">Due Soon</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- REVENUE OVERVIEW -->
+      <div class="ds-card">
+        <div class="ds-card-header"><h3>Monthly Revenue Trend (2026)</h3><span class="ds-status ds-status-active">↑ 23% vs 2025</span></div>
+        <div class="admin-chart-placeholder">
+          <div class="chart-bar-group">
+            <div class="chart-col"><div class="chart-bar" style="height:55%"></div><span>Apr</span></div>
+            <div class="chart-col"><div class="chart-bar" style="height:63%"></div><span>May</span></div>
+            <div class="chart-col"><div class="chart-bar" style="height:72%"></div><span>Jun</span></div>
+            <div class="chart-col"><div class="chart-bar" style="height:68%"></div><span>Jul</span></div>
+            <div class="chart-col"><div class="chart-bar" style="height:80%"></div><span>Aug</span></div>
+            <div class="chart-col"><div class="chart-bar chart-bar-active" style="height:100%"></div><span>Sep</span></div>
+          </div>
+          <div class="chart-legend">
+            <span><strong>$892,400</strong> — September 2026 (Best month)</span>
+          </div>
+        </div>
+      </div>
+    </div><!-- /overview -->
+
+    <!-- ── FLEET ── -->
+    <div class="dash-section" id="sec-fleet">
+      <h1 class="ds-page-title">Fleet Management</h1>
+      <p class="ds-page-sub">Complete inventory of all 850 machines with real-time status.</p>
+      <div class="ds-card">
+        <div class="ds-card-header">
+          <h3>Fleet Inventory</h3>
+          <div style="display:flex;gap:8px;">
+            <button class="filter-btn active" style="font-size:.75rem;">All (850)</button>
+            <button class="filter-btn" style="font-size:.75rem;">Available (724)</button>
+            <button class="filter-btn" style="font-size:.75rem;">Rented (89)</button>
+            <button class="filter-btn" style="font-size:.75rem;">Maintenance (37)</button>
+          </div>
+        </div>
+        <div class="ds-table-wrap">
+          <table class="ds-table">
+            <thead><tr><th>Unit ID</th><th>Equipment Name</th><th>Category</th><th>Location</th><th>Client</th><th>Last Service</th><th>Status</th><th>Action</th></tr></thead>
+            <tbody>
+              <tr><td class="dt-mono">EX-0042</td><td><strong>CAT 320 Hydraulic Excavator</strong></td><td>Excavator</td><td>Downtown Houston</td><td>BuildCore</td><td>Sep 12</td><td><span class="ds-status ds-status-active">On Rental</span></td><td><button class="btn btn-sm btn-ghost" onclick="alert('Unit details opened')">View</button></td></tr>
+              <tr><td class="dt-mono">CR-0018</td><td><strong>Liebherr LTM 1090-4.2</strong></td><td>Mobile Crane</td><td>Memorial District</td><td>Vistas Const.</td><td>Aug 30</td><td><span class="ds-status ds-status-active">On Rental</span></td><td><button class="btn btn-sm btn-ghost" onclick="alert('Unit details opened')">View</button></td></tr>
+              <tr><td class="dt-mono">GN-0095</td><td><strong>Cummins 100kVA Generator</strong></td><td>Generator</td><td>Memorial Park</td><td>BuildCore</td><td>Sep 5</td><td><span class="ds-status ds-status-active">On Rental</span></td><td><button class="btn btn-sm btn-ghost" onclick="alert('Unit details opened')">View</button></td></tr>
+              <tr><td class="dt-mono">EX-0015</td><td><strong>Komatsu PC240 Excavator</strong></td><td>Excavator</td><td>Depot — Bay 3</td><td>—</td><td>Aug 5</td><td><span class="ds-status ds-status-error">Overdue Maint.</span></td><td><button class="btn btn-sm btn-primary" onclick="alert('Maintenance scheduled')">Schedule</button></td></tr>
+              <tr><td class="dt-mono">AL-0067</td><td><strong>Genie S-85 Boom Lift</strong></td><td>Aerial Lift</td><td>West Loop Tower</td><td>BuildCore</td><td>Aug 28</td><td><span class="ds-status ds-status-active">On Rental</span></td><td><button class="btn btn-sm btn-ghost" onclick="alert('Unit details opened')">View</button></td></tr>
+              <tr><td class="dt-mono">GN-0101</td><td><strong>Caterpillar 500kVA Generator</strong></td><td>Generator</td><td>Depot — Bay 1</td><td>—</td><td>Sep 10</td><td><span class="ds-status ds-status-info">Available</span></td><td><button class="btn btn-sm btn-ghost" onclick="alert('Unit listed for rental')">List</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div><!-- /fleet -->
+
+    <!-- ── MAINTENANCE SCHEDULE ── -->
+    <div class="dash-section" id="sec-maintenance-sched">
+      <h1 class="ds-page-title">Maintenance Schedule</h1>
+      <p class="ds-page-sub">Preventive and corrective maintenance tracking for the entire fleet.</p>
+      <div class="ds-card">
+        <div class="ds-card-header"><h3>Pending Maintenance</h3><button class="btn btn-sm btn-primary" onclick="alert('Bulk maintenance scheduled!')">Schedule All Overdue</button></div>
+        <div class="maint-list">
+          <div class="maint-item maint-item-lg"><div class="maint-icon mi-red"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-x"/></svg></div><div class="maint-info"><strong>Unit EX-0015 — Komatsu PC240 Excavator</strong><span>Service Type: Hydraulic fluid change + filter replacement</span><span style="color:#EF4444;font-size:.78rem;font-weight:600;">5 days overdue — Depot Bay 3 (Available for service)</span></div><button class="btn btn-sm btn-primary" onclick="alert('EX-0015 maintenance scheduled for today 9am')">Schedule Now</button></div>
+          <div class="maint-item maint-item-lg"><div class="maint-icon mi-red"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-x"/></svg></div><div class="maint-info"><strong>Unit GN-0048 — Cummins 100kVA Generator</strong><span>Service Type: Air filter + oil change</span><span style="color:#EF4444;font-size:.78rem;font-weight:600;">2 days overdue — Currently at client site (Memorial Park)</span></div><button class="btn btn-sm btn-primary" onclick="alert('GN-0048: Field technician dispatched')">Dispatch Tech</button></div>
+          <div class="maint-item maint-item-lg"><div class="maint-icon mi-amber"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-alert"/></svg></div><div class="maint-info"><strong>Unit AL-0023 — JLG 3246ES Scissor Lift</strong><span>Service Type: Annual safety inspection + load test</span><span style="color:#F59E0B;font-size:.78rem;font-weight:600;">Due today — Depot Bay 5</span></div><button class="btn btn-sm btn-ghost" onclick="alert('AL-0023 inspection scheduled for 2pm')">Schedule Today</button></div>
+          <div class="maint-item maint-item-lg"><div class="maint-icon mi-amber"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-alert"/></svg></div><div class="maint-info"><strong>Unit CP-0012 — CAT CB10 Compactor</strong><span>Service Type: Drive belt inspection + lubrication</span><span style="color:#F59E0B;font-size:.78rem;font-weight:600;">Due tomorrow — Depot Bay 2</span></div><button class="btn btn-sm btn-ghost" onclick="alert('CP-0012 scheduled for tomorrow 10am')">Schedule</button></div>
+          <div class="maint-item maint-item-lg"><div class="maint-icon mi-green"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-check"/></svg></div><div class="maint-info"><strong>Unit EX-0042 — CAT 320 Excavator</strong><span>Service Type: Routine 250-hour check (next: 1000hrs)</span><span style="color:var(--text-muted);font-size:.78rem;">Next due: Oct 12 — Machine is on active rental</span></div><span class="ds-status ds-status-active">On Track</span></div>
+        </div>
+      </div>
+    </div><!-- /maintenance-sched -->
+
+    <!-- ── BOOKINGS ── -->
+    <div class="dash-section" id="sec-bookings">
+      <h1 class="ds-page-title">Active Bookings</h1>
+      <p class="ds-page-sub">All current and upcoming rental bookings across all clients.</p>
+      <div class="ds-card">
+        <div class="ds-table-wrap">
+          <table class="ds-table">
+            <thead><tr><th>Booking ID</th><th>Client</th><th>Equipment</th><th>Site</th><th>Start</th><th>Return</th><th>Value</th><th>Status</th><th>Action</th></tr></thead>
+            <tbody>
+              <tr><td class="dt-mono">#IL-2026-4821</td><td>BuildCore Group</td><td>CAT 320 Excavator</td><td>Downtown Houston</td><td>Sep 12</td><td>Oct 15</td><td class="rt-price">$14,400</td><td><span class="ds-status ds-status-active">Active</span></td><td><button class="btn btn-sm btn-ghost" onclick="alert('Booking details')">Details</button></td></tr>
+              <tr><td class="dt-mono">#IL-2026-4818</td><td>Vistas Construction</td><td>LTM 1090 Crane</td><td>Memorial District</td><td>Sep 14</td><td>Nov 30</td><td class="rt-price">$90,000</td><td><span class="ds-status ds-status-active">Active</span></td><td><button class="btn btn-sm btn-ghost" onclick="alert('Booking details')">Details</button></td></tr>
+              <tr><td class="dt-mono">#IL-2026-4830</td><td>MedBuild Group</td><td>500kVA Generator</td><td>Med Center</td><td>Sep 20</td><td>Mar 20, 27</td><td class="rt-price">$57,600</td><td><span class="ds-status ds-status-info">In Transit</span></td><td><button class="btn btn-sm btn-ghost" onclick="alert('Booking details')">Details</button></td></tr>
+              <tr><td class="dt-mono">#IL-2026-4835</td><td>NorthStar Energy</td><td>2MW Generator Set</td><td>Wind Farm Site</td><td>Sep 22</td><td>Dec 22</td><td class="rt-price">$162,000</td><td><span class="ds-status ds-status-warning">Pending Docs</span></td><td><button class="btn btn-sm btn-primary" onclick="alert('Documents requested from client')">Request Docs</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div><!-- /bookings -->
+
+    <!-- ── CLIENTS ── -->
+    <div class="dash-section" id="sec-clients">
+      <h1 class="ds-page-title">Client Accounts</h1>
+      <p class="ds-page-sub">Manage all 2,418 registered client accounts.</p>
+      <div class="ds-card">
+        <div class="ds-table-wrap">
+          <table class="ds-table">
+            <thead><tr><th>Client</th><th>Contact</th><th>Sector</th><th>Active Rentals</th><th>Total Spend</th><th>Member Since</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td><strong>BuildCore Group</strong></td><td>James Mitchell</td><td>Construction</td><td>3</td><td class="rt-price">$284,000</td><td>2019</td><td><span class="ds-status ds-status-active">Premium</span></td></tr>
+              <tr><td><strong>Vistas Construction</strong></td><td>Sunita Agarwal</td><td>Construction</td><td>1</td><td class="rt-price">$176,000</td><td>2021</td><td><span class="ds-status ds-status-active">Premium</span></td></tr>
+              <tr><td><strong>MedBuild Group</strong></td><td>Mohammed Hasan</td><td>Healthcare Infra</td><td>1</td><td class="rt-price">$92,000</td><td>2022</td><td><span class="ds-status ds-status-info">Standard</span></td></tr>
+              <tr><td><strong>NorthStar Energy</strong></td><td>Lisa Wang</td><td>Energy</td><td>1</td><td class="rt-price">$210,000</td><td>2020</td><td><span class="ds-status ds-status-active">Premium</span></td></tr>
+              <tr><td><strong>Apex Mining Ltd</strong></td><td>Raj Sharma</td><td>Mining</td><td>0</td><td class="rt-price">$44,000</td><td>2024</td><td><span class="ds-status ds-status-info">Standard</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div><!-- /clients -->
+
+    <!-- ── DELIVERIES ── -->
+    <div class="dash-section" id="sec-deliveries">
+      <h1 class="ds-page-title">Deliveries & Returns</h1>
+      <p class="ds-page-sub">Today's logistics — outgoing deliveries and scheduled returns.</p>
+      <div class="ds-two-col">
+        <div class="ds-card">
+          <div class="ds-card-header"><h3>Today's Deliveries</h3><span class="ds-badge" style="position:static;display:inline-flex;width:auto;height:auto;padding:4px 10px;border-radius:99px;">3 Scheduled</span></div>
+          <div class="ds-return-list">
+            <div class="ds-return-item"><div class="ds-return-date"><strong>8:00am</strong><span>Today</span></div><div class="ds-return-info"><strong>CAT 500kVA Generator → Med Center</strong><span>MedBuild Group — Booking #IL-2026-4830</span></div><span class="ds-status ds-status-info">In Transit</span></div>
+            <div class="ds-return-item"><div class="ds-return-date"><strong>11:00am</strong><span>Today</span></div><div class="ds-return-info"><strong>JLG Scissor Lift → Greenway Plaza</strong><span>GlobalBridge Corp — Booking #IL-2026-4822</span></div><span class="ds-status ds-status-warning">Loading</span></div>
+            <div class="ds-return-item"><div class="ds-return-date"><strong>2:00pm</strong><span>Today</span></div><div class="ds-return-info"><strong>CAT CB10 Compactor → Westpark Ave</strong><span>Apex Contractors — Booking #IL-2026-4839</span></div><span class="ds-status ds-status-info">Scheduled</span></div>
+          </div>
+        </div>
+        <div class="ds-card">
+          <div class="ds-card-header"><h3>This Week's Returns</h3></div>
+          <div class="ds-return-list">
+            <div class="ds-return-item"><div class="ds-return-date ds-return-urgent"><strong>Sep 28</strong><span>Fri</span></div><div class="ds-return-info"><strong>Cummins 100kVA Generator</strong><span>BuildCore Group — Unit GN-0095</span></div><span class="ds-status ds-status-warning">3 days</span></div>
+            <div class="ds-return-item"><div class="ds-return-date"><strong>Oct 1</strong><span>Mon</span></div><div class="ds-return-info"><strong>Bobcat E55 Mini Excavator</strong><span>Greenhill Ltd — Unit EX-0055</span></div><span class="ds-status ds-status-info">6 days</span></div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /deliveries -->
+
+    <!-- ── FINANCE ── -->
+    <div class="dash-section" id="sec-finance">
+      <h1 class="ds-page-title">Revenue & Invoices</h1>
+      <p class="ds-page-sub">Financial overview for September 2026.</p>
+      <div class="ds-kpi-grid">
+        <div class="kpi-card"><div class="kpi-icon kpi-green"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><line x1="12" y1="1" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><div class="kpi-data"><span class="kpi-value">$892K</span><span class="kpi-label">Revenue (Sept)</span></div></div>
+        <div class="kpi-card"><div class="kpi-icon kpi-amber"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2"/><polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2"/></svg></div><div class="kpi-data"><span class="kpi-value">$148K</span><span class="kpi-label">Outstanding</span></div></div>
+        <div class="kpi-card"><div class="kpi-icon kpi-blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/><rect x="14" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/><rect x="3" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/><rect x="14" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/></svg></div><div class="kpi-data"><span class="kpi-value">147</span><span class="kpi-label">Invoices Issued</span></div></div>
+        <div class="kpi-card"><div class="kpi-icon kpi-green"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><polyline points="17 6 23 6 23 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><div class="kpi-data"><span class="kpi-value">+23%</span><span class="kpi-label">YoY Growth</span></div></div>
+      </div>
+      <div class="ds-card">
+        <div class="ds-card-header"><h3>Recent Invoices</h3><button class="btn btn-sm btn-ghost" onclick="alert('Exporting all invoices...')">Export All</button></div>
+        <div class="ds-table-wrap">
+          <table class="ds-table">
+            <thead><tr><th>Invoice</th><th>Client</th><th>Equipment</th><th>Amount</th><th>Issued</th><th>Due</th><th>Status</th><th>Action</th></tr></thead>
+            <tbody>
+              <tr><td class="dt-mono">INV-2026-0089</td><td>BuildCore Group</td><td>CAT 320 Excavator</td><td class="rt-price">$14,400</td><td>Sep 12</td><td>Oct 12</td><td><span class="ds-status ds-status-warning">Pending</span></td><td><button class="btn btn-sm btn-ghost" onclick="alert('Payment reminder sent')">Remind</button></td></tr>
+              <tr><td class="dt-mono">INV-2026-0088</td><td>Vistas Construction</td><td>LTM 1090 Crane</td><td class="rt-price">$28,500</td><td>Sep 14</td><td>Oct 14</td><td><span class="ds-status ds-status-warning">Pending</span></td><td><button class="btn btn-sm btn-ghost" onclick="alert('Payment reminder sent')">Remind</button></td></tr>
+              <tr><td class="dt-mono">INV-2026-0081</td><td>BuildCore Group</td><td>Cummins Generator</td><td class="rt-price">$2,760</td><td>Sep 5</td><td>Oct 5</td><td><span class="ds-status ds-status-active">Paid</span></td><td><button class="btn btn-sm btn-ghost" onclick="alert('Downloading receipt')">↓ PDF</button></td></tr>
+              <tr><td class="dt-mono">INV-2026-0076</td><td>BuildCore Group</td><td>Genie S-85 Boom Lift</td><td class="rt-price">$6,460</td><td>Aug 28</td><td>Sep 28</td><td><span class="ds-status ds-status-active">Paid</span></td><td><button class="btn btn-sm btn-ghost" onclick="alert('Downloading receipt')">↓ PDF</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div><!-- /finance -->
+
+  </div><!-- /dash-content -->
+</div><!-- /dash-main -->
+
+<style>
+/* Admin-specific chart */
+.admin-chart-placeholder {
+  background: var(--bg-elevated);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.chart-bar-group {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  height: 160px;
+  padding-bottom: var(--space-md);
+}
+
+.chart-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.chart-bar {
+  width: 100%;
+  background: rgba(245,158,11,0.2);
+  border-radius: 4px 4px 0 0;
+  transition: all 0.3s;
+}
+
+.chart-bar:hover { background: rgba(245,158,11,0.4); }
+.chart-bar-active { background: var(--grad-brand); }
+
+.chart-col span {
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.chart-legend {
+  margin-top: 12px;
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.chart-legend strong { color: var(--brand-primary); }
+
+.rt-price {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--brand-primary);
+}
+</style>
+
+<script src="js/global.js"></script>
+<script>
+  function navTo(sectionId) {
+    document.querySelectorAll('.ds-nav-item').forEach(item => item.classList.remove('active'));
+    document.querySelectorAll('.dash-section').forEach(s => s.classList.remove('active'));
+    const navItem = document.querySelector(`[data-section="${sectionId}"]`);
+    if (navItem) navItem.classList.add('active');
+    const sec = document.getElementById(`sec-${sectionId}`);
+    if (sec) sec.classList.add('active');
+    const titles = {
+      overview: 'Admin Overview', fleet: 'Fleet Management',
+      'maintenance-sched': 'Maintenance Schedule', bookings: 'Active Bookings',
+      clients: 'Client Accounts', deliveries: 'Deliveries & Returns', finance: 'Revenue & Invoices'
+    };
+    const titleEl = document.getElementById('section-title');
+    if (titleEl) titleEl.textContent = titles[sectionId] || 'Admin';
+    window.scrollTo(0, 0);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.ds-nav-item[data-section]').forEach(item => {
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
+        navTo(item.dataset.section);
+      });
+    });
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const group = btn.closest('.ds-card-header') || btn.closest('.ds-browse-filters');
+        if (group) group.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+
+    const menuBtn = document.getElementById('dt-menu-btn');
+    const sidebar = document.getElementById('dash-sidebar');
+    menuBtn?.addEventListener('click', () => sidebar.classList.toggle('open'));
+  });
+</script>
+</body>
+</html>

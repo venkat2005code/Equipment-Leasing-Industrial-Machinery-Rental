@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="IronLease Home 2 — Project-first, process-driven approach to industrial equipment rental. Start your project today.">
+  <title>Home 2 – IronLease</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/home2.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+
+<!-- HEADER (same component) -->
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo" aria-label="IronLease Home">
+      <div class="logo-mark">
+        <svg width="38" height="38" viewBox="0 0 38 38" fill="none"><rect width="38" height="38" rx="6" fill="url(#lg2)"/><path d="M7 28V16l8-7 8 7v12H7z" fill="none" stroke="#fff" stroke-width="2"/><path d="M23 28V20h8v8H23z" fill="none" stroke="#fff" stroke-width="2"/><path d="M15 28v-6h4v6" fill="none" stroke="#fff" stroke-width="2"/><circle cx="30" cy="11" r="4" fill="#F59E0B"/><defs><linearGradient id="lg2" x1="0" y1="0" x2="38" y2="38"><stop offset="0%" stop-color="#1E3A5F"/><stop offset="100%" stop-color="#0F2137"/></linearGradient></defs></svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-primary">Iron<span class="logo-accent">Lease</span></span>
+        
+      </div>
+    </a>
+    <nav class="primary-nav" id="primary-nav" aria-label="Main Navigation">
+      <ul class="nav-list">
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link active">Home <svg class="chevron" width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></a>
+          <div class="dropdown-menu">
+            <a href="index.html" class="dropdown-item"><span class="di-icon"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-home-1"/></svg></span><span><strong>Home 1</strong><small>Bold hero — Heavy machinery focus</small></span></a>
+            <a href="home2.html" class="dropdown-item active-page"><span class="di-icon"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-home-2"/></svg></span><span><strong>Home 2</strong><small>Project-first — Process-driven flow</small></span></a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Services <svg class="chevron" width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></a>
+          <div class="dropdown-menu dropdown-wide">
+            <a href="catalog.html" class="dropdown-item"><span class="di-icon"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-layers"/></svg></span><span><strong>Equipment Catalog</strong><small>Browse all machinery by category</small></span></a>
+            <a href="pricing.html" class="dropdown-item"><span class="di-icon"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-tag"/></svg></span><span><strong>Rental Pricing</strong><small>Daily, weekly & project rates</small></span></a>
+            <a href="how-it-works.html" class="dropdown-item"><span class="di-icon"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-settings"/></svg></span><span><strong>How Rental Works</strong><small>4-step rental process</small></span></a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Dashboard <svg class="chevron" width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></a>
+          <div class="dropdown-menu">
+            <a href="dashboard-user.html" class="dropdown-item"><span class="di-icon"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-user"/></svg></span><span><strong>User Dashboard</strong><small>Manage your rentals & bookings</small></span></a>
+            <a href="dashboard-admin.html" class="dropdown-item"><span class="di-icon"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-shield"/></svg></span><span><strong>Admin Dashboard</strong><small>Fleet & operations management</small></span></a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <button class="dir-toggle" id="dir-toggle"><span class="dir-label" id="dir-label">LTR</span></button>
+      <button class="theme-toggle" id="theme-toggle">
+        <span class="theme-icon theme-icon-dark"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="theme-icon theme-icon-light"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></span>
+      </button>
+      <a href="login.html" class="btn btn-primary header-cta"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Login / Book Now</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-overlay" id="mobile-overlay"></div>
+<nav class="mobile-nav" id="mobile-nav">
+  <div class="mobile-nav-header"><span class="logo-primary">Iron<span class="logo-accent">Lease</span></span><button class="mobile-nav-close" id="mobile-nav-close"></button></div>
+  <ul class="mobile-nav-list">
+    <li><a href="index.html" class="mobile-nav-link">Home 1</a></li>
+    <li><a href="home2.html" class="mobile-nav-link active">Home 2</a></li>
+    <li><a href="about.html" class="mobile-nav-link">About</a></li>
+    <li><a href="catalog.html" class="mobile-nav-link">Equipment Catalog</a></li>
+    <li><a href="pricing.html" class="mobile-nav-link">Pricing</a></li>
+    <li><a href="how-it-works.html" class="mobile-nav-link">How It Works</a></li>
+    <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    <li><a href="dashboard-user.html" class="mobile-nav-link">User Dashboard</a></li>
+    <li><a href="dashboard-admin.html" class="mobile-nav-link">Admin Dashboard</a></li>
+    <li><a href="login.html" class="btn btn-primary mobile-cta">Login / Book Now</a></li>
+  </ul>
+</nav>
+
+<main id="main-content">
+
+  <!-- ── SPLIT HERO ── -->
+  <section class="h2-hero">
+    <div class="h2-hero-left">
+      <div class="h2-hero-label">Home 2 — Project-First Experience</div>
+      <h1 class="h2-hero-title">Power Your<br><span class="h2-accent">Next Project.</span></h1>
+      <p class="h2-hero-sub">Tell us your project type and timeline. We'll match you with certified machinery, deliver to site, and handle maintenance — so your crew can focus on building.</p>
+
+      <!-- Project Finder Widget -->
+      <div class="project-finder">
+        <div class="pf-header">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Find Equipment for My Project
+        </div>
+        <div class="pf-body">
+          <div class="pf-field">
+            <label>Project Type</label>
+            <select id="project-type" aria-label="Select project type">
+              <option>Construction & Earthworks</option>
+              <option>Infrastructure Development</option>
+              <option>Mining & Extraction</option>
+              <option>Industrial Plant Setup</option>
+              <option>Emergency/Disaster Relief</option>
+            </select>
+          </div>
+          <div class="pf-field">
+            <label>Duration Needed</label>
+            <select id="project-duration" aria-label="Select duration">
+              <option>1–7 Days (Short-term)</option>
+              <option>1–4 Weeks</option>
+              <option>1–3 Months</option>
+              <option>3–12 Months (Long-term)</option>
+            </select>
+          </div>
+          <a href="catalog.html" class="btn btn-primary pf-btn">
+            Show Available Equipment
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="h2-trust">
+        <span style="display:flex;align-items:center;gap:4px;"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-check"/></svg> ISO 9001 Certified</span>
+        <span style="display:flex;align-items:center;gap:4px;"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-check"/></svg> OSHA Compliant</span>
+        <span style="display:flex;align-items:center;gap:4px;"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-check"/></svg> 48hr Delivery</span>
+      </div>
+    </div>
+
+    <div class="h2-hero-right" style="background: linear-gradient(rgba(15, 33, 55, 0.4), rgba(15, 33, 55, 0.4)), url('images/split-screen-machinery.png'); background-size: cover; background-position: center;">
+      <div class="h2-fleet-preview">
+        <div class="h2-fleet-header">
+          <span class="h2-fleet-title">Fleet Status — Live</span>
+          <span class="h2-fleet-dot"></span>
+        </div>
+        <div class="h2-fleet-stats">
+          <div class="h2-fleet-stat">
+            <span class="hfs-val">724</span>
+            <span class="hfs-label">Available Now</span>
+          </div>
+          <div class="h2-fleet-stat">
+            <span class="hfs-val">89</span>
+            <span class="hfs-label">On Active Jobs</span>
+          </div>
+          <div class="h2-fleet-stat">
+            <span class="hfs-val">37</span>
+            <span class="hfs-label">In Maintenance</span>
+          </div>
+        </div>
+        <div class="h2-fleet-items">
+          <div class="h2-fleet-item">
+            <div class="hfi-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2" y="14" width="14" height="7" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="11" width="11" height="5" rx="1" stroke="currentColor" stroke-width="1.5"/><circle cx="5" cy="21" r="2" stroke="currentColor" stroke-width="1.5"/><circle cx="13" cy="21" r="2" stroke="currentColor" stroke-width="1.5"/><path d="M16 13V7l5-2v8" stroke="currentColor" stroke-width="1.5"/></svg>
+            </div>
+            <div class="hfi-info">
+              <strong>Excavators</strong>
+              <span>42 available</span>
+            </div>
+            <span class="hfi-badge hfi-green">●</span>
+          </div>
+          <div class="h2-fleet-item">
+            <div class="hfi-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><line x1="12" y1="2" x2="12" y2="20" stroke="currentColor" stroke-width="1.5"/><line x1="12" y1="4" x2="22" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="22" y1="10" x2="22" y2="16" stroke="currentColor" stroke-width="1.5"/><rect x="18" y="16" width="5" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/></svg>
+            </div>
+            <div class="hfi-info">
+              <strong>Tower Cranes</strong>
+              <span>18 available</span>
+            </div>
+            <span class="hfi-badge hfi-green">●</span>
+          </div>
+          <div class="h2-fleet-item">
+            <div class="hfi-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2" y="6" width="20" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M9 11l-3 4h7l-3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="17" cy="12" r="2" stroke="currentColor" stroke-width="1.5"/></svg>
+            </div>
+            <div class="hfi-info">
+              <strong>Generators</strong>
+              <span>95 available</span>
+            </div>
+            <span class="hfi-badge hfi-green">●</span>
+          </div>
+          <div class="h2-fleet-item">
+            <div class="hfi-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="8" y="2" width="8" height="4" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="7" y="6" width="10" height="3" rx="1" stroke="currentColor" stroke-width="1.5"/><line x1="12" y1="9" x2="12" y2="19" stroke="currentColor" stroke-width="1.5"/><rect x="4" y="19" width="16" height="4" rx="1" stroke="currentColor" stroke-width="1.5"/></svg>
+            </div>
+            <div class="hfi-info">
+              <strong>Aerial Lifts</strong>
+              <span>67 available</span>
+            </div>
+            <span class="hfi-badge hfi-amber">●</span>
+          </div>
+        </div>
+        <a href="catalog.html" class="h2-fleet-cta">View Full Fleet Availability →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTOR SERVICES ── -->
+  <section class="h2-sectors">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <div class="section-eyebrow">Who We Serve</div>
+        <h2 class="section-title">Built for Every Industrial Sector</h2>
+        <p class="section-desc">From skyscraper foundations to offshore platforms — our fleet is configured for the demands of every sector.</p>
+      </div>
+      <div class="sector-tabs">
+        <button class="sector-tab active" data-tab="construction">
+          <svg class="icon icon-sm st-icon" aria-hidden="true"><use href="#icon-layers"/></svg> Construction
+        </button>
+        <button class="sector-tab" data-tab="energy">
+          <span style="color:var(--brand-primary);"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-zap"/></svg></span> Energy & Power
+        </button>
+        <button class="sector-tab" data-tab="mining">
+          <svg class="icon icon-sm st-icon" aria-hidden="true"><use href="#icon-pickaxe"/></svg> Mining
+        </button>
+        <button class="sector-tab" data-tab="infra">
+          <svg class="icon icon-sm st-icon" aria-hidden="true"><use href="#icon-road"/></svg> Infrastructure
+        </button>
+      </div>
+      <div class="sector-panels">
+        <div class="sector-panel active" id="tab-construction">
+          <div class="sp-content">
+            <h3>Construction & Development</h3>
+            <p>Supporting residential towers, commercial complexes, and mixed-use developments with excavators, cranes, concrete equipment, and scaffolding systems. We've powered over 1,200 construction projects across the region.</p>
+            <ul class="sp-list">
+              <li>Hydraulic excavators (5T–50T class)</li>
+              <li>Tower cranes & mobile cranes</li>
+              <li>Concrete mixers & batching plants</li>
+              <li>Scaffolding & access equipment</li>
+            </ul>
+            <a href="catalog.html" class="btn btn-primary">Explore Construction Fleet</a>
+          </div>
+          <div class="sp-visual">
+            <img src="images/sector-construction.png" alt="Construction Fleet" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+          </div>
+        </div>
+        <div class="sector-panel" id="tab-energy">
+          <div class="sp-content">
+            <h3>Energy & Power Projects</h3>
+            <p>Providing generators, specialized lifting equipment and maintenance platforms for solar farms, wind energy installations, substations and power plant construction projects.</p>
+            <ul class="sp-list">
+              <li>500kVA–2MW diesel generators</li>
+              <li>All-terrain cranes for turbine installation</li>
+              <li>Specialized utility vehicles</li>
+              <li>High-reach platforms</li>
+            </ul>
+            <a href="catalog.html" class="btn btn-primary">Explore Energy Fleet</a>
+          </div>
+          <div class="sp-visual">
+            <img src="images/sector-energy.png" alt="Energy Fleet" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+          </div>
+        </div>
+        <div class="sector-panel" id="tab-mining">
+          <div class="sp-content">
+            <h3>Mining & Extraction</h3>
+            <p>Rugged, high-durability equipment for open-pit and underground mining operations. Drilling rigs, haul trucks, and crushing/screening equipment available for long-term site leasing.</p>
+            <ul class="sp-list">
+              <li>Drilling rigs & rock breakers</li>
+              <li>Haul trucks (25T–100T payload)</li>
+              <li>Crushing and screening plants</li>
+              <li>Underground loaders</li>
+            </ul>
+            <a href="catalog.html" class="btn btn-primary">Explore Mining Fleet</a>
+          </div>
+          <div class="sp-visual">
+            <img src="images/sector-mining.png" alt="Mining Fleet" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+          </div>
+        </div>
+        <div class="sector-panel" id="tab-infra">
+          <div class="sp-content">
+            <h3>Infrastructure Development</h3>
+            <p>Road construction, bridge building, tunneling, and utility installation projects supported by compaction equipment, graders, pipelayers and specialized infrastructure machinery.</p>
+            <ul class="sp-list">
+              <li>Motor graders & road pavers</li>
+              <li>Vibratory compactors & rollers</li>
+              <li>Pipelaying & trenching equipment</li>
+              <li>Tunnel boring support machinery</li>
+            </ul>
+            <a href="catalog.html" class="btn btn-primary">Explore Infra Fleet</a>
+          </div>
+          <div class="sp-visual">
+            <img src="images/sector-infrastructure.png" alt="Infrastructure Fleet" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROCESS DEEP DIVE ── -->
+  <section class="h2-process">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Our Process</div>
+        <h2 class="section-title">The IronLease Rental Journey</h2>
+      </div>
+      <div class="h2-timeline">
+        <div class="h2-tl-item">
+          <div class="h2-tl-left">
+            <div class="h2-tl-num">01</div>
+            <div class="h2-tl-line"></div>
+          </div>
+          <div class="h2-tl-content">
+            <h3>Project Consultation</h3>
+            <p>Our fleet advisors analyze your project scope, site conditions, soil type, and timeline to recommend the exact right equipment — preventing over-spec and under-spec mistakes that cost money.</p>
+            <div class="h2-tl-detail">
+              <span>⏱ Same-day response</span>
+              <span class="step-feature"><svg class="icon sf-icon" aria-hidden="true"><use href="#icon-phone"/></svg> Dedicated advisor</span>
+            </div>
+          </div>
+        </div>
+        <div class="h2-tl-item">
+          <div class="h2-tl-left">
+            <div class="h2-tl-num">02</div>
+            <div class="h2-tl-line"></div>
+          </div>
+          <div class="h2-tl-content">
+            <h3>Custom Quotation</h3>
+            <p>Receive a detailed, itemized quote within 2 hours — covering rental rates, insurance, fuel arrangements, mobilization and any operator cost if required. No surprise add-ons later.</p>
+            <div class="h2-tl-detail">
+              <span class="step-feature"><svg class="icon sf-icon" aria-hidden="true"><use href="#icon-zap"/></svg> Quote in 2 hrs</span>
+              <span class="step-feature"><svg class="icon sf-icon" aria-hidden="true"><use href="#icon-tag"/></svg> Fixed-price guarantee</span>
+            </div>
+          </div>
+        </div>
+        <div class="h2-tl-item">
+          <div class="h2-tl-left">
+            <div class="h2-tl-num">03</div>
+            <div class="h2-tl-line"></div>
+          </div>
+          <div class="h2-tl-content">
+            <h3>Delivery & Commissioning</h3>
+            <p>Equipment arrives cleaned, fueled, and pre-inspected. Our field team commissions it at your site and provides a hands-on safety walkthrough for your crew before leaving.</p>
+            <div class="h2-tl-detail">
+              <span class="step-feature"><svg class="icon sf-icon" aria-hidden="true"><use href="#icon-truck"/></svg> 48hr delivery SLA</span>
+              <span class="step-feature"><svg class="icon sf-icon" aria-hidden="true"><use href="#icon-tool"/></svg> On-site commissioning</span>
+            </div>
+          </div>
+        </div>
+        <div class="h2-tl-item">
+          <div class="h2-tl-left">
+            <div class="h2-tl-num">04</div>
+            <div class="h2-tl-line h2-tl-line--last"></div>
+          </div>
+          <div class="h2-tl-content">
+            <h3>Active Rental Support</h3>
+            <p>Throughout your rental, monitor machine health via our dashboard, request maintenance visits, extend your rental period, or swap equipment — all in real time through your client portal.</p>
+            <div class="h2-tl-detail">
+              <span class="step-feature"><svg class="icon sf-icon" aria-hidden="true"><use href="#icon-bar-chart"/></svg> Live dashboard</span>
+              <span class="step-feature"><svg class="icon sf-icon" aria-hidden="true"><use href="#icon-tool"/></svg> 24/7 field support</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top: var(--space-2xl)">
+        <a href="how-it-works.html" class="btn btn-outline btn-lg">Full Process Details →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PRICING TEASER ── -->
+  <section class="h2-pricing-teaser">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <div class="section-eyebrow">Transparent Pricing</div>
+        <h2 class="section-title">Rates Built Around Your Project</h2>
+        <p class="section-desc">No arbitrary tier packages. Choose the rental structure that matches how your project actually works.</p>
+      </div>
+      <div class="h2-pricing-cards">
+        <div class="h2-price-card">
+          <div class="hpc-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-calendar"/></svg></div>
+          <h3>Day Rate</h3>
+          <p>For short mobilization windows, emergency equipment, or single-shift requirements.</p>
+          <div class="hpc-from">Starting at <strong>$95</strong>/day</div>
+          <a href="pricing.html" class="btn btn-outline">View Day Rates</a>
+        </div>
+        <div class="h2-price-card h2-price-card--featured">
+          <div class="hpc-badge">Most Popular</div>
+          <div class="hpc-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-file-text"/></svg></div>
+          <h3>Project Rate</h3>
+          <p>Fixed weekly or monthly rate for project-duration rentals. Best value for continuous use — up to 35% saving vs. daily.</p>
+          <div class="hpc-from">Starting at <strong>$480</strong>/week</div>
+          <a href="pricing.html" class="btn btn-primary">Get a Project Quote</a>
+        </div>
+        <div class="h2-price-card">
+          <div class="hpc-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-users"/></svg></div>
+          <h3>Fleet Contract</h3>
+          <p>Long-term site fleet management contract. Dedicated fleet, on-call technician, and priority availability for 6–24 month durations.</p>
+          <div class="hpc-from">Custom pricing</div>
+          <a href="contact.html" class="btn btn-outline">Talk to Fleet Team</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PARTNERS & TRUST ── -->
+  <section class="h2-trust-section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <div class="section-eyebrow">Trusted By</div>
+        <h2 class="section-title">Powering Industry Leaders</h2>
+      </div>
+      <div class="h2-partner-logos">
+        <div class="partner-logo-item">BuildCore Group</div>
+        <div class="partner-logo-item">MedBuild Infra</div>
+        <div class="partner-logo-item">NorthStar Energy</div>
+        <div class="partner-logo-item">Vistas Construction</div>
+        <div class="partner-logo-item">Apex Mining Ltd</div>
+        <div class="partner-logo-item">GlobalBridge Corp</div>
+      </div>
+      <div class="h2-trust-numbers">
+        <div class="h2-trust-num">
+          <strong>2,400+</strong>
+          <span>Satisfied Clients</span>
+        </div>
+        <div class="h2-trust-num">
+          <strong>18,000+</strong>
+          <span>Rental Cycles Completed</span>
+        </div>
+        <div class="h2-trust-num">
+          <strong>99.2%</strong>
+          <span>Machine Uptime Rate</span>
+        </div>
+        <div class="h2-trust-num">
+          <strong>12 yrs</strong>
+          <span>In Operations</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FINAL CTA H2 ── -->
+  <section class="h2-final-cta">
+    <div class="container">
+      <div class="h2-cta-inner">
+        <div class="h2-cta-bg-text">IRONLEASE</div>
+        <div class="h2-cta-content">
+          <h2>The Right Machine is<br>One Click Away</h2>
+          <p>Stop waiting. Stop overpaying for owned equipment. Start building with the exact machinery your project demands — with full support from day one.</p>
+          <div class="h2-cta-actions">
+            <a href="catalog.html" class="btn btn-primary btn-lg">Find My Equipment</a>
+            <a href="contact.html" class="btn btn-ghost btn-lg">Schedule a Consultation</a>
+          </div>
+          <div class="h2-cta-trust">
+            <span>No commitment required</span>
+            <span>·</span>
+            <span>Quote in 2 hours</span>
+            <span>·</span>
+            <span>Delivery in 48 hours</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer" id="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <div class="logo-mark logo-mark--sm">
+            <svg width="30" height="30" viewBox="0 0 38 38" fill="none"><rect width="38" height="38" rx="6" fill="#1E3A5F"/><path d="M7 28V16l8-7 8 7v12H7z" fill="none" stroke="#fff" stroke-width="2"/><path d="M23 28V20h8v8H23z" fill="none" stroke="#fff" stroke-width="2"/><path d="M15 28v-6h4v6" fill="none" stroke="#fff" stroke-width="2"/><circle cx="30" cy="11" r="4" fill="#F59E0B"/></svg>
+          </div>
+          <div>
+            <span class="logo-primary">Iron<span class="logo-accent">Lease</span></span>
+          </div>
+        </a>
+        <p class="footer-brand-desc">Premium industrial equipment rental and machinery leasing solutions for construction, energy, and infrastructure sectors across the region.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+          <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
+          <a href="#" class="social-link" aria-label="YouTube">▶</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>Equipment</h5>
+          <ul>
+            <li><a href="catalog.html#excavators">Excavators</a></li>
+            <li><a href="catalog.html#cranes">Cranes & Hoists</a></li>
+            <li><a href="catalog.html#generators">Generators</a></li>
+            <li><a href="catalog.html#lifts">Aerial Lifts</a></li>
+            <li><a href="catalog.html">Full Catalog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Account</h5>
+          <ul>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="dashboard-user.html">My Rentals</a></li>
+            <li><a href="dashboard-user.html#invoices">Invoices</a></li>
+            <li><a href="dashboard-admin.html">Admin Panel</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Get in Touch</h5>
+          <ul class="footer-contact">
+            <li><svg class="fc-icon icon" aria-hidden="true"><use href="#icon-phone"/></svg> +1 (800) 476-6532</li>
+            <li><svg class="fc-icon icon" aria-hidden="true"><use href="#icon-mail"/></svg> fleet@ironlease.com</li>
+            <li><svg class="fc-icon icon" aria-hidden="true"><use href="#icon-clock"/></svg> 24/7 Support Line</li>
+            <li><svg class="fc-icon icon" aria-hidden="true"><use href="#icon-map-pin"/></svg> Industrial Zone, Houston TX</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 IronLease Industrial Equipment Rental. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Rental</a>
+        <a href="#">Safety Compliance</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/global.js"></script>
+<script>
+  // Tab switching for sectors
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.sector-tab');
+    const panels = document.querySelectorAll('.sector-panel');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        panels.forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        const panel = document.getElementById('tab-' + tab.dataset.tab);
+        if (panel) panel.classList.add('active');
+      });
+    });
+  });
+</script>
+<script src="js/icons.js"></script>
+</body>
+</html>
