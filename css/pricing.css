@@ -20,8 +20,18 @@
 }
 
 [data-theme="light"] .pricing-promise-strip {
-  background: rgba(245,158,11,0.04);
-  border-color: rgba(245,158,11,0.12);
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.2);
+}
+
+[data-theme="light"] .pricing-hero .pp-item {
+  color: #fff;
+}
+
+[data-theme="light"] .pricing-hero .section-eyebrow {
+  color: #fff;
+  background: rgba(255,255,255,0.15);
+  border-color: rgba(255,255,255,0.25);
 }
 
 .pp-item {
@@ -444,10 +454,10 @@
   padding: 10px 12px;
   background: var(--bg-elevated);
   border-radius: var(--radius-sm);
-  flex: 1;
+  margin-top: auto;
 }
 
-.cpc-cta { margin-top: auto; align-self: flex-start; }
+.cpc-cta { align-self: flex-start; }
 
 /* Specialist card variants */
 .specialist-rates-note {

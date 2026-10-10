@@ -114,9 +114,11 @@
   font-family: var(--font-ui);
   font-size: 0.65rem;
   font-weight: 800;
-  width: 18px;
+  min-width: 18px;
+  width: auto;
   height: 18px;
-  border-radius: 50%;
+  padding: 0 4px;
+  border-radius: 9px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -441,7 +443,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   border-bottom: 1px solid var(--border-color);
   background: var(--bg-elevated);
 }
@@ -456,7 +458,7 @@
 .ds-table tr:last-child td { border-bottom: none; }
 .ds-table tr:hover td { background: rgba(245,158,11,0.02); }
 
-.dt-equip strong {
+.ds-table td strong, .dt-equip strong {
   display: block;
   font-size: 0.875rem;
   font-weight: 600;
@@ -471,7 +473,7 @@
 .dt-mono {
   font-family: 'Courier New', monospace;
   font-size: 0.8rem;
-  color: var(--text-muted);
+  color: var(--text-secondary);
 }
 
 /* ── STATUS BADGES ── */
@@ -642,7 +644,7 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   transition: color var(--dur-normal);
 }
 

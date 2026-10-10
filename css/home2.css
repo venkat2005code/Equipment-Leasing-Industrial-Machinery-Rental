@@ -241,7 +241,7 @@
 .hfs-label {
   font-family: var(--font-ui);
   font-size: 0.65rem;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.06em;
   margin-top: 4px;
@@ -295,7 +295,7 @@
 .hfi-info span {
   font-family: var(--font-ui);
   font-size: 0.72rem;
-  color: var(--text-muted);
+  color: var(--text-secondary);
 }
 
 .hfi-badge { font-size: 0.7rem; }
